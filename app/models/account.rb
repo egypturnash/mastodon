@@ -67,7 +67,8 @@ class Account < ApplicationRecord
   validates :username, format: { with: /\A[a-z0-9_]+\z/i }, uniqueness: { scope: :domain, case_sensitive: false }, length: { maximum: 30 }, if: -> { local? && will_save_change_to_username? }
   validates_with UnreservedUsernameValidator, if: -> { local? && will_save_change_to_username? }
   validates :display_name, length: { maximum: 30 }, if: -> { local? && will_save_change_to_display_name? }
-  validates :note, length: { maximum: 160 }, if: -> { local? && will_save_change_to_note? }
+  validates :note, length: { maximum: 413 }, if: -> { local? && will_save_change_to_note? }
+  validate :note_has_eight_newlines?, if: -> { local? && will_save_change_to_note? }
 
   # Timelines
   has_many :stream_entries, inverse_of: :account, dependent: :destroy
@@ -161,10 +162,8 @@ class Account < ApplicationRecord
   def save_with_optional_media!
     save!
   rescue ActiveRecord::RecordInvalid
-    self.avatar              = nil
-    self.header              = nil
-    self[:avatar_remote_url] = ''
-    self[:header_remote_url] = ''
+    self.avatar = nil if errors[:avatar].present?
+    self.header = nil if errors[:header].present?
     save!
   end
 
@@ -182,6 +181,10 @@ class Account < ApplicationRecord
 
   def excluded_from_timeline_domains
     Rails.cache.fetch("exclude_domains_for:#{id}") { domain_blocks.pluck(:domain) }
+  end
+
+  def note_has_eight_newlines?
+    errors.add(:note, 'Bio can\'t have more then 8 newlines') unless note.count("\n") <= 8
   end
 
   class << self
