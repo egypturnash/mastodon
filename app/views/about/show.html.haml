@@ -15,7 +15,8 @@
       .container.links
         .brand
           = link_to root_url do
-            = image_tag asset_pack_path('logo_full.svg'), alt: 'Mastodon'
+            = image_tag asset_pack_path('logo-cybre.png')
+            = Setting.site_title
 
         %ul.nav
           %li
@@ -68,4 +69,4 @@
     .container
       %p
         = link_to t('about.source_code'), @instance_presenter.source_url
-        = " (#{@instance_presenter.version_number})"
+        = " (#{@instance_presenter.version_number})-cybre"

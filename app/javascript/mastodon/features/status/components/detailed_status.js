@@ -114,7 +114,7 @@ export default class DetailedStatus extends ImmutablePureComponent {
           <a className='detailed-status__datetime' href={status.get('url')} target='_blank' rel='noopener'>
             <FormattedDate value={new Date(status.get('created_at'))} hour12={false} year='numeric' month='short' day='2-digit' hour='2-digit' minute='2-digit' />
           </a>{applicationLink} · {reblogLink} · <Link to={`/statuses/${status.get('id')}/favourites`} className='detailed-status__link'>
-            <i className='fa fa-star' />
+            <i className='fa fa-floppy-o' />
             <span className='detailed-status__favorites'>
               <FormattedNumber value={status.get('favourites_count')} />
             </span>
