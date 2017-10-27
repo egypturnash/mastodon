@@ -1,4 +1,6 @@
 class FixNullBooleans < ActiveRecord::Migration[5.1]
+  disable_ddl_transaction!
+
   def change
     change_column_default :domain_blocks, :reject_media, false
     change_column_null :domain_blocks, :reject_media, false, false
