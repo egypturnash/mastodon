@@ -65,6 +65,28 @@ namespace :mastodon do
     puts
   end
 
+  desc 'Machine-readably add a user by providing their email, username and initial password.' \
+      'The user will receive a confirmation email.'
+  task add_user_automatic: :environment do
+    print 'Enter email: '
+    email = STDIN.gets.chomp
+
+    print 'Enter username: '
+    username = STDIN.gets.chomp
+
+    print 'Enter password: '
+    password = STDIN.gets.chomp
+
+    user = User.new(email: email, password: password, account_attributes: { username: username })
+    if user.save
+      puts 'User added and confirmation mail sent to user\'s email address.'
+    else
+      user.errors.each do |key, val|
+        STDERR.puts "#{key}: #{val}"
+      end
+    end
+  end
+
   namespace :media do
     desc 'Removes media attachments that have not been assigned to any status for longer than a day (deprecated)'
     task clear: :environment do
