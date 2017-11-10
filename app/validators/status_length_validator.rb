@@ -7,7 +7,6 @@ class StatusLengthValidator < ActiveModel::Validator
   def validate(status)
     return unless status.local? && !status.reblog?
     status.errors.add(:text, I18n.t('statuses.over_character_limit', max: MAX_CHARS)) if too_long?(status)
-    status.errors.add(:text, I18n.t('statuses.over_uncut_character_limit', max: MAX_UNCUT_CHARS)) if too_long_uncut?(status)
     status.errors.add(:text, I18n.t('statuses.over_precut_character_limit', max: MAX_UNCUT_CHARS/2)) if too_long_before_cut?(status)
   end
 
