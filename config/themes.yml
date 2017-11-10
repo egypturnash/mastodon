@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-default: styles/application.scss
-contrast: styles/contrast.scss
-mastodon-light: styles/mastodon-light.scss
-=======
 default: darkwide.scss
 mastodon: styles/application.scss
->>>>>>> Initial commit: new theme, dark and wide.
+contrast: styles/contrast.scss
+mastodon-light: styles/mastodon-light.scss
