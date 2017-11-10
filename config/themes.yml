@@ -1,2 +1,2 @@
-default: darkwide.scss
+default: styles/darkwide.scss
 mastodon: styles/application.scss
