@@ -802,8 +802,9 @@ en:
       <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
+    default: "Soft Rumblings in a Quiet Cavern"
     contrast: High contrast
-    default: Mastodon
+    mastodon: "Mastodon Default"
     mastodon-light: Mastodon (light)
   time:
     formats:
