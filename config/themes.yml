@@ -1,1 +1,2 @@
-default: styles/application.scss
+default: darkwide.scss
+mastodon: styles/application.scss
