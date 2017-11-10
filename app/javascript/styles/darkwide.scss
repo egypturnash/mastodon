@@ -9,10 +9,9 @@
 		min-width: 35em;
 		max-width: 100vw;
 	}
-}
-
-.column, .drawer {
-	padding-left: 3em;
+	.column, .drawer {
+		margin-left: 3em;
+	}
 }
 
 .column-header__wrapper {
