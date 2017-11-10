@@ -697,7 +697,7 @@ en:
       other: 'contained the disallowed hashtags: %{tags}'
     language_detection: Automatically detect language
     open_in_web: Open in web
-    over_character_limit: Sorry! You can't go on for longer than %{max} characters.
+    over_character_limit: Sorry! You can't go on for longer than %{max} characters. Maybe you should set up a blog.
     over_uncut_character_limit: Please apply a CW to anything longer than %{max} characters.
     over_precut_character_limit: Nice try. Please limit your CWs to %{max} characters.
     pin_errors:
