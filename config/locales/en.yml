@@ -499,6 +499,7 @@ en:
   statuses:
     open_in_web: Open in web
     over_character_limit: character limit of %{max} exceeded
+    over_uncut_character_limit: Please apply a CW to anything longer than %{max} characters.
     pin_errors:
       limit: Too many toots pinned
       ownership: Someone else's toot cannot be pinned
