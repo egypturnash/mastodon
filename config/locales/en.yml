@@ -1,7 +1,7 @@
 ---
 en:
   about:
-    about_hashtag_html: These are public toots tagged with <strong>#%{hashtag}</strong>. You can interact with them if you have an account anywhere in the fediverse.
+    about_hashtag_html: These are public rars tagged with <strong>#%{hashtag}</strong>. You can interact with them if you have an account anywhere in the fediverse.
     about_mastodon_html: Mastodon is a social network based on open web protocols and free, open-source software. It is decentralized like e-mail.
     about_this: About
     closed_registrations: Registrations are currently closed on this instance. However! You can find a different instance to make an account on and get access to the very same network from there.
@@ -35,20 +35,20 @@ en:
     user_count_before: Home to
     what_is_mastodon: What is Mastodon?
   accounts:
-    follow: Follow
-    followers: Followers
-    following: Following
+    follow: Listen
+    followers: Listeners
+    following: Listening
     media: Media
     nothing_here: There is nothing here!
-    people_followed_by: People whom %{name} follows
-    people_who_follow: People who follow %{name}
-    posts: Toots
-    posts_with_replies: Toots with replies
-    remote_follow: Remote follow
+    people_followed_by: People whom %{name} listens to
+    people_who_follow: People who listens %{name}
+    posts: Rars
+    posts_with_replies: Rars with replies
+    remote_follow: Remote listen
     reserved_username: The username is reserved
     roles:
       admin: Admin
-    unfollow: Unfollow
+    unfollow: Stop listening
   admin:
     account_moderation_notes:
       account: Moderator
@@ -67,9 +67,9 @@ en:
       edit: Edit
       email: E-mail
       feed_url: Feed URL
-      followers: Followers
-      followers_url: Followers URL
-      follows: Follows
+      followers: Listeners
+      followers_url: Listeners URL
+      follows: Listeners
       inbox_url: Inbox URL
       ip: IP
       location:
@@ -145,7 +145,7 @@ en:
         create: Create block
         hint: The domain block will not prevent creation of account entries in the database, but will retroactively and automatically apply specific moderation methods on those accounts.
         severity:
-          desc_html: "<strong>Silence</strong> will make the account's posts invisible to anyone who isn't following them. <strong>Suspend</strong> will remove all of the account's content, media, and profile data. Use <strong>None</strong> if you just want to reject media files."
+          desc_html: "<strong>Silence</strong> will make the account's posts invisible to anyone who isn't listening to them. <strong>Suspend</strong> will remove all of the account's content, media, and profile data. Use <strong>None</strong> if you just want to reject media files."
           noop: None
           silence: Silence
           suspend: Suspend
@@ -211,7 +211,7 @@ en:
     settings:
       bootstrap_timeline_accounts:
         desc_html: Separate multiple usernames by comma. Only local and unlocked accounts will work. Default when empty is all local admins.
-        title: Default follows for new users
+        title: Default listens for new users
       contact_information:
         email: Business e-mail
         username: Contact username
@@ -298,14 +298,14 @@ en:
     set_new_password: Set new password
   authorize_follow:
     error: Unfortunately, there was an error looking up the remote account
-    follow: Follow
-    follow_request: 'You have sent a follow request to:'
-    following: 'Success! You are now following:'
+    follow: Listen
+    follow_request: 'You have sent a listening request to:'
+    following: 'Success! You are now listening to:'
     post_follow:
       close: Or, you can just close this window.
       return: Return to the user's profile
       web: Go to web
-    title: Follow %{acct}
+    title: Listen to %{acct}
   datetime:
     distance_in_words:
       about_x_hours: "%{count}h"
@@ -343,20 +343,20 @@ en:
   exports:
     blocks: You block
     csv: CSV
-    follows: You follow
+    follows: You listen to
     mutes: You mute
     storage: Media storage
   followers:
     domain: Domain
-    explanation_html: If you want to ensure the privacy of your statuses, you must be aware of who is following you. <strong>Your private statuses are delivered to all instances where you have followers</strong>. You may wish to review them, and remove followers if you do not trust your privacy to be respected by the staff or software of those instances.
-    followers_count: Number of followers
+    explanation_html: If you want to ensure the privacy of your rars, you must be aware of who is listening you. <strong>Your private statuses are delivered to all instances where you have listeners</strong>. You may wish to review them, and remove listeners if you do not trust your privacy to be respected by the staff or software of those instances.
+    followers_count: Number of listeners
     lock_link: Lock your account
-    purge: Remove from followers
+    purge: Remove from lsteners
     success:
-      one: In the process of soft-blocking followers from one domain...
-      other: In the process of soft-blocking followers from %{count} domains...
+      one: In the process of soft-blocking listeners from one domain...
+      other: In the process of soft-blocking listeners from %{count} domains...
     true_privacy_html: Please mind that <strong>true privacy can only be achieved with end-to-end encryption</strong>.
-    unlocked_warning_html: Anyone can follow you to immediately view your private statuses. %{lock_link} to be able to review and reject followers.
+    unlocked_warning_html: Anyone can listen to you to immediately view your private statuses. %{lock_link} to be able to review and reject listeners.
     unlocked_warning_title: Your account is not locked
   generic:
     changes_saved_msg: Changes successfully saved!
@@ -366,14 +366,14 @@ en:
       one: Something isn't quite right yet! Please review the error below
       other: Something isn't quite right yet! Please review %{count} errors below
   imports:
-    preface: You can import data that you have exported from another instance, such as a list of the people you are following or blocking.
+    preface: You can import data that you have exported from another instance, such as a list of the people you are listening to or blocking.
     success: Your data was successfully uploaded and will now be processed in due time
     types:
       blocking: Blocking list
-      following: Following list
+      following: Listening list
       muting: Muting list
     upload: Upload
-  landing_strip_html: "<strong>%{name}</strong> is a user on %{link_to_root_path}. You can follow them or interact with them if you have an account anywhere in the fediverse."
+  landing_strip_html: "<strong>%{name}</strong> is a user on %{link_to_root_path}. You can listen to them or interact with them if you have an account anywhere in the fediverse."
   landing_strip_signup_html: If you don't, you can <a href="%{sign_up_path}">sign up here</a>.
   media_attachments:
     validations:
@@ -384,8 +384,8 @@ en:
       body: 'Here is a brief summary of what you missed on %{instance} since your last visit on %{since}:'
       mention: "%{name} mentioned you in:"
       new_followers_summary:
-        one: You have acquired one new follower! Yay!
-        other: You have gotten %{count} new followers! Amazing!
+        one: You have acquired one new listener! Yay!
+        other: You have gotten %{count} new listener! Amazing!
       subject:
         one: "1 new notification since your last visit \U0001F418"
         other: "%{count} new notifications since your last visit \U0001F418"
@@ -393,17 +393,17 @@ en:
       body: 'Your status was favourited by %{name}:'
       subject: "%{name} favourited your status"
     follow:
-      body: "%{name} is now following you!"
-      subject: "%{name} is now following you"
+      body: "%{name} is now listening to you!"
+      subject: "%{name} is now listening to you"
     follow_request:
-      body: "%{name} has requested to follow you"
-      subject: 'Pending follower: %{name}'
+      body: "%{name} has requested to listen to you"
+      subject: 'Pending listener: %{name}'
     mention:
       body: 'You were mentioned by %{name} in:'
       subject: You were mentioned by %{name}
     reblog:
-      body: 'Your status was boosted by %{name}:'
-      subject: "%{name} boosted your status"
+      body: 'Your rar was echoed by %{name}:'
+      subject: "%{name} echoed your rar"
   number:
     human:
       decimal_units:
@@ -426,23 +426,23 @@ en:
     web: Web
   push_notifications:
     favourite:
-      title: "%{name} favourited your status"
+      title: "%{name} favourited your growlings"
     follow:
-      title: "%{name} is now following you"
+      title: "%{name} is now listening to you"
     group:
       title: "%{count} notifications"
     mention:
-      action_boost: Boost
+      action_boost: Echo
       action_expand: Show more
       action_favourite: Favourite
       title: "%{name} mentioned you"
     reblog:
-      title: "%{name} boosted your status"
+      title: "%{name} echoed your growlings"
   remote_follow:
-    acct: Enter your username@domain you want to follow from
+    acct: Enter the username@domain you want to listen from
     missing_resource: Could not find the required redirect URL for your account
-    proceed: Proceed to follow
-    prompt: 'You are going to follow:'
+    proceed: Proceed to listen
+    prompt: 'You are going to listen to:'
   sessions:
     activity: Last activity
     browser: Browser
@@ -489,7 +489,7 @@ en:
     development: Development
     edit_profile: Edit profile
     export: Data export
-    followers: Authorized followers
+    followers: Authorized listeners
     import: Import
     notifications: Notifications
     preferences: Preferences
@@ -498,25 +498,25 @@ en:
     your_apps: Your applications
   statuses:
     open_in_web: Open in web
-    over_character_limit: character limit of %{max} exceeded
+    over_character_limit: Sorry! You can't go on for longer than %{max} characters.
     over_uncut_character_limit: Please apply a CW to anything longer than %{max} characters.
     pin_errors:
-      limit: Too many toots pinned
-      ownership: Someone else's toot cannot be pinned
-      private: Non-public toot cannot be pinned
-      reblog: A boost cannot be pinned
+      limit: Too many rars pinned
+      ownership: Someone else's rar cannot be pinned
+      private: Non-public rar cannot be pinned
+      reblog: An echo cannot be pinned
     show_more: Show more
     visibilities:
-      private: Followers-only
-      private_long: Only show to followers
+      private: Listeners-only
+      private_long: Only show to listeners
       public: Public
       public_long: Everyone can see
       unlisted: Unlisted
       unlisted_long: Everyone can see, but not listed on public timelines
   stream_entries:
     click_to_show: Click to show
-    pinned: Pinned toot
-    reblogged: boosted
+    pinned: Pinned rar
+    reblogged: echoed
     sensitive_content: Sensitive content
   terms:
     body_html: |
