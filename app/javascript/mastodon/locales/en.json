@@ -44,7 +44,7 @@
   "column_header.unpin": "Unpin",
   "column_subheading.navigation": "Navigation",
   "column_subheading.settings": "Settings",
-  "compose_form.lock_disclaimer": "Your account is not {locked}. Anyone can listen to you to view your listenerer-only posts.",
+  "compose_form.lock_disclaimer": "Your account is not {locked}. Anyone can listen to you to view your listener-only posts.",
   "compose_form.lock_disclaimer.lock": "locked",
   "compose_form.placeholder": "What wisdom would you share?",
   "compose_form.publish": "Rar",
