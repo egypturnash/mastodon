@@ -390,8 +390,8 @@ en:
         one: "1 new notification since your last visit \U0001F418"
         other: "%{count} new notifications since your last visit \U0001F418"
     favourite:
-      body: 'Your status was favourited by %{name}:'
-      subject: "%{name} favourited your status"
+      body: 'Your growling was treasured by %{name}:'
+      subject: "%{name} treasured your growlings"
     follow:
       body: "%{name} is now listening to you!"
       subject: "%{name} is now listening to you"
@@ -426,7 +426,7 @@ en:
     web: Web
   push_notifications:
     favourite:
-      title: "%{name} favourited your growlings"
+      title: "%{name} treasured your growlings"
     follow:
       title: "%{name} is now listening to you"
     group:
@@ -434,7 +434,7 @@ en:
     mention:
       action_boost: Echo
       action_expand: Show more
-      action_favourite: Favourite
+      action_favourite: Treasure
       title: "%{name} mentioned you"
     reblog:
       title: "%{name} echoed your growlings"
