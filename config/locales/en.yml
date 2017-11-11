@@ -572,9 +572,9 @@ en:
         other: "%{count} new notifications since your last visit \U0001F418"
       title: In your absence...
     favourite:
-      body: 'Your status was favourited by %{name}:'
-      subject: "%{name} favourited your status"
-      title: New favourite
+      body: 'Your growling was treasured by %{name}:'
+      subject: "%{name} treasured your growlings"
+      title: New treasure
     follow:
       body: "%{name} is now listening to you!"
       subject: "%{name} is now listening to you"
