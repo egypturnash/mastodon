@@ -803,9 +803,10 @@ en:
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
     default: "Soft Rumblings in a Quiet Cavern"
-    contrast: High contrast
+    natural-order: "The Sounds Of Waves Reversing"
     mastodon: "Mastodon Default"
     mastodon-light: Mastodon (light)
+    contrast: Mastodon (High contrast)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
