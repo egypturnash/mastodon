@@ -1,3 +1,2 @@
 default: styles/darkwide.scss
-natural-order: styles/backwards.scss
 mastodon: styles/application.scss
