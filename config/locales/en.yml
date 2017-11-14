@@ -590,6 +590,7 @@ en:
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
     default: "Soft Rumblings in a Quiet Cavern"
+    natural-order: "The Sounds of Waves Reversing"
     mastodon: "Mastodon Default"
   time:
     formats:
