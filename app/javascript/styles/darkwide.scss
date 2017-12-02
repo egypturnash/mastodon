@@ -1,4 +1,28 @@
-@import 'application';
+//@import 'application';
+
+@import 'mastodon/mixins';
+@import 'dragonstyle/variables';
+@import 'fonts/roboto';
+@import 'fonts/roboto-mono';
+@import 'fonts/montserrat';
+
+@import 'mastodon/reset';
+@import 'mastodon/basics';
+@import 'mastodon/containers';
+@import 'mastodon/lists';
+@import 'mastodon/footer';
+@import 'mastodon/compact_header';
+@import 'mastodon/landing_strip';
+@import 'mastodon/forms';
+@import 'mastodon/accounts';
+@import 'mastodon/stream_entries';
+@import 'mastodon/components';
+@import 'dragonstyle/boost';
+@import 'mastodon/emoji_picker';
+@import 'dragonstyle/about';
+@import 'mastodon/tables';
+@import 'mastodon/admin';
+@import 'mastodon/rtl';
 
 
 @media only screen and (min-width:800px) {
@@ -36,6 +60,21 @@
 	display:flex;
 	flex-direction:column;
 	flex-basis:content;
+}
+
+.icon-button, .text-icon-button, .button--block {
+        &:active,
+        &:focus,
+        &:hover {
+          color: $dragonstyle-gold;
+        }
+	&.inverted {
+	        &:active,
+	        &:focus,
+	        &:hover {
+	          color: $dragonstyle-gold;
+	        }
+	}
 }
 
 
@@ -115,18 +154,23 @@
  * IN THE QUIET CAVES OF DRAGONS, THERE IS NO COLOR
  * ONLY SILENCES BETWEEN THE WORDS
  */
-.drawer__inner, .drawer__header, .column-header, .tabs-bar, .column, .column-link, .column > .scrollable, .column-header__button, ::-webkit-scrollbar-track, ::-webkit-scrollbar-track:active, ::-webkit-scrollbar-track:hover
+.drawer__inner, .drawer__header, .column-header, .column-header__collapsible-inner, .tabs-bar, .column, .column-link, .column > .scrollable, .column-header__button, ::-webkit-scrollbar-track, ::-webkit-scrollbar-track:active, ::-webkit-scrollbar-track:hover
 {
     background-color:transparent;
 }
 
 .autosuggest-textarea__textarea, .compose-form__modifiers, .compose-form__buttons {
-	background:#333;
-	color:white;
+	background: darken($dragonstyle-background, 10%);
+//	background:#333;
+	color:$primary-text-color;
 }
 
 .autosuggest-textarea__textarea {
 	line-height:150%;
+}
+
+.getting-started {
+	background: url('../images/dragonstyle-getting-started.png') no-repeat 0 100%;
 }
 
 /*
