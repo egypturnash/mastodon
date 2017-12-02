@@ -14,7 +14,7 @@ $dragonstyle-purple: #39164D;
     color: $ui-primary-color;
 
     a {
-      color: $ui-highlight-color;
+      color: $dragonstyle-gold;
       text-decoration: underline;
     }
   }
@@ -23,12 +23,13 @@ $dragonstyle-purple: #39164D;
     display: inline;
     margin: 0;
     padding: 0;
-    font-weight: 500;
+//    font-weight: 500;
+    font-style:oblique;
     background: transparent;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color: lighten($ui-primary-color, 10%);
+//    color: lighten($ui-primary-color, 10%);
   }
 
   h1 {
@@ -37,14 +38,14 @@ $dragonstyle-purple: #39164D;
     line-height: 30px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: $ui-secondary-color;
+    color: $ui-primary-color;
 
     small {
       font-family: 'mastodon-font-sans-serif', sans-serif;
       display: block;
       font-size: 18px;
       font-weight: 400;
-      color: $ui-base-lighter-color;
+      color: $ui-primary-color;
     }
   }
 
@@ -54,7 +55,7 @@ $dragonstyle-purple: #39164D;
     line-height: 26px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: $ui-secondary-color;
+    color: $ui-primary-color;
   }
 
   h3 {
@@ -63,7 +64,7 @@ $dragonstyle-purple: #39164D;
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: $ui-secondary-color;
+    color: $ui-primary-color;
   }
 
   h4 {
@@ -72,7 +73,7 @@ $dragonstyle-purple: #39164D;
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: $ui-secondary-color;
+    color: $ui-primary-color;
   }
 
   h5 {
@@ -81,7 +82,7 @@ $dragonstyle-purple: #39164D;
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: $ui-secondary-color;
+    color: $ui-primary-color;
   }
 
   h6 {
@@ -90,7 +91,7 @@ $dragonstyle-purple: #39164D;
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: $ui-secondary-color;
+    color: $ui-primary-color;
   }
 
   ul,
@@ -290,7 +291,7 @@ $dragonstyle-purple: #39164D;
 
       span {
         &:last-child {
-          color: $ui-secondary-color;
+//          color: $ui-secondary-color;
         }
       }
 
