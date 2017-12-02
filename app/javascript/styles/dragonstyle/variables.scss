@@ -1,0 +1,40 @@
+// Commonly used web colors
+$black: #000000;            // Black
+//$white: #ffffff;            // White
+$success-green: #79bd9a;    // Padua
+$error-red: #df405a;        // Cerise
+$warning-red: #ff5050;      // Sunset Orange
+$gold-star: #ca8f04;        // Dark Goldenrod
+
+// Values from the classic Mastodon UI
+$classic-base-color: #282c37;         // Midnight Express
+$classic-primary-color: #9baec8;      // Echo Blue
+$classic-secondary-color: #d9e1e8;    // Pattens Blue
+$classic-highlight-color: #2b90d9;    // Summer Sky
+
+// dragon style
+$dragonstyle-background: #341A4B;
+$dragonstyle-magenta: #A2559A;
+$dragonstyle-deepblue: #1D224E;
+$dragonstyle-cyan: #5D96A0;
+$dragonstyle-gold: #D2CF52;
+$dragonstyle-chocolate: #6F4222;
+
+$white: adjust-color($dragonstyle-gold, $saturation:-50%);
+
+// Variables for defaults in UI
+$base-shadow-color: $black !default;
+$base-overlay-background: $black !default;
+$base-border-color: $white !default;
+$simple-background-color: $white !default;
+$primary-text-color: $white !default;
+$valid-value-color: $success-green !default;
+$error-value-color: $error-red !default;
+
+// Tell UI to use selected colors
+$ui-base-color: $black !default;                  // Darkest
+//$ui-base-lighter-color: lighten($ui-base-color, 26%) !default; // Lighter darkest
+$ui-base-lighter-color: adjust-color($dragonstyle-gold, $saturation:-50%, $lightness:-20%) !default; // Lighter darkest
+$ui-primary-color: mix($dragonstyle-background, $dragonstyle-cyan, 50%)!default;            // Lighter
+$ui-secondary-color: $dragonstyle-deepblue !default;        // Lightest
+$ui-highlight-color: $dragonstyle-background !default;        // Vibrant
