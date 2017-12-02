@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'dragonstyle/variables';
 
 .landing-page {
 	background:black;
@@ -133,7 +133,7 @@
   }
 
   .mascot-container {
-   background: $dragonstyle-purple; 
+   background: $dragonstyle-background; 
    max-width:100vw;
    text-align:center;
    .mascot {
@@ -239,7 +239,7 @@
   }
 
   .about-short {
-	  background: linear-gradient(to bottom, $dragonstyle-purple, black);
+	  background: linear-gradient(to bottom, $dragonstyle-background, black);
     padding: 50px 0 30px;
     font-family: 'mastodon-font-sans-serif', sans-serif;
     font-size: 16px;
@@ -259,7 +259,7 @@
   }
 
   .information-board {
-    background: darken($dragonstyle-purple,15%);
+    background: darken($dragonstyle-background,15%);
     padding: 20px 0;
     margin: 40px 0;
     display:block;
@@ -306,7 +306,7 @@
       position: absolute;
       width: 280px;
       box-sizing: border-box;
-      background: darken($dragonstyle-purple, 10%);
+      background: darken($dragonstyle-background, 10%);
       padding: 20px;
       padding-top: 10px;
       border-radius: 4px 4px 0 0;
