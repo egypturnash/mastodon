@@ -7,6 +7,11 @@
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render 'shared/error_messages', object: resource
 
+  - if @invite.present? && @invite.autofollow?
+    .fields-group{ style: 'margin-bottom: 30px' }
+      %p.hint{ style: 'text-align: center' }= t('invites.invited_by')
+      = render 'authorize_follows/card', account: @invite.user.account
+
   = f.simple_fields_for :account do |ff|
     .input-with-append
       = ff.input :username, autofocus: true, placeholder: t('simple_form.labels.defaults.username'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.username'), :autocomplete => 'off' }
@@ -16,6 +21,7 @@
   = f.input :email, placeholder: t('simple_form.labels.defaults.email'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.email'), :autocomplete => 'off' }
   = f.input :password, placeholder: t('simple_form.labels.defaults.password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.password'), :autocomplete => 'off' }
   = f.input :password_confirmation, placeholder: t('simple_form.labels.defaults.confirm_password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.confirm_password'), :autocomplete => 'off' }
+  = f.input :invite_code, as: :hidden
 
   .actions
     = f.button :button, t('auth.register'), type: :submit

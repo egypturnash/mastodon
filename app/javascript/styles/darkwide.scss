@@ -25,6 +25,10 @@
 @import 'mastodon/rtl';
 
 
+body {
+//	font-size:16px !important;
+}
+
 @media only screen and (min-width:800px) {
 /*
  * the default columns are crazy skinny, fix that
@@ -166,9 +170,21 @@ a, .status__content a {
     background-color:transparent;
 }
 
-.autosuggest-textarea__textarea, .compose-form__modifiers, .compose-form__buttons {
-	background: darken($dragonstyle-background, 10%);
-//	background:#333;
+
+// colors for the place you go to open your yawp
+
+.compose-form {
+	.spoiler-input__input,
+	.autosuggest-textarea__textarea,
+	.compose-form__modifiers,
+	.compose-form__buttons-wrapper {
+		background: darken($dragonstyle-background, 5%);
+		color:$primary-text-color;
+	}
+}
+
+.search__input {
+	background: darken($dragonstyle-background, 5%);
 	color:$primary-text-color;
 }
 
@@ -176,8 +192,67 @@ a, .status__content a {
 	line-height:150%;
 }
 
+.drawer__inner__mastodon {
+	background:none;
+	background-image: linear-gradient($ui-base-color, $dragonstyle-deepblue);
+}
+
+//
+// make dropdown menus actually visible
+//
+
+$dragonstyle-menu-background: $dragonstyle-background;
+.dropdown-menu__arrow {
+  &.left {
+    border-left-color: $dragonstyle-menu-background;
+  }
+
+  &.top {
+    border-top-color: $dragonstyle-menu-background;
+  }
+
+  &.bottom {
+   border-bottom-color: $dragonstyle-menu-background;
+  }
+
+  &.right {
+    border-right-color: $dragonstyle-menu-background;
+  }
+}
+.dropdown-menu {
+	background:$dragonstyle-menu-background;
+	.dropdown-menu__item {
+		a {
+			background:none;
+			color:$dragonstyle-cyan;
+		        &:hover,
+		        &:active {
+		        	color:$dragonstyle-gold;
+		        }
+		}
+	}
+}
+
+//
+// user pages
+//
+
+.account__header {
+	.account__header__username {
+		color:$ui-primary-color;
+	}
+        .account__header__display-name {
+		color:$dragonstyle-gold;
+	}
+        .account__header__content {
+		color:$ui-primary-color;
+	}
+}
+
+
+
 .getting-started {
-	background: url('../images/dragonstyle-getting-started.png') no-repeat 0 100%;
+//	background: url('../images/dragonstyle-getting-started.png') no-repeat 0 100%;
 }
 
 /*

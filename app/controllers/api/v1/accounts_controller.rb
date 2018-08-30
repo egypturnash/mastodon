@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 class Api::V1::AccountsController < Api::BaseController
-  before_action -> { doorkeeper_authorize! :read }, except: [:follow, :unfollow, :block, :unblock, :mute, :unmute]
-  before_action -> { doorkeeper_authorize! :follow }, only: [:follow, :unfollow, :block, :unblock, :mute, :unmute]
+  before_action -> { authorize_if_got_token! :read, :'read:accounts' }, except: [:follow, :unfollow, :block, :unblock, :mute, :unmute]
+  before_action -> { doorkeeper_authorize! :follow, :'write:follows' }, only: [:follow, :unfollow]
+  before_action -> { doorkeeper_authorize! :follow, :'write:mutes' }, only: [:mute, :unmute]
+  before_action -> { doorkeeper_authorize! :follow, :'write:blocks' }, only: [:block, :unblock]
+
   before_action :require_user!, except: [:show]
   before_action :set_account
+  before_action :check_account_suspension, only: [:show]
 
   respond_to :json
 
@@ -13,9 +17,9 @@ class Api::V1::AccountsController < Api::BaseController
   end
 
   def follow
-    FollowService.new.call(current_user.account, @account.acct)
+    FollowService.new.call(current_user.account, @account.acct, reblogs: truthy_param?(:reblogs))
 
-    options = @account.locked? ? {} : { following_map: { @account.id => true }, requested_map: { @account.id => false } }
+    options = @account.locked? ? {} : { following_map: { @account.id => { reblogs: truthy_param?(:reblogs) } }, requested_map: { @account.id => false } }
 
     render json: @account, serializer: REST::RelationshipSerializer, relationships: relationships(options)
   end
@@ -26,7 +30,7 @@ class Api::V1::AccountsController < Api::BaseController
   end
 
   def mute
-    MuteService.new.call(current_user.account, @account)
+    MuteService.new.call(current_user.account, @account, notifications: truthy_param?(:notifications))
     render json: @account, serializer: REST::RelationshipSerializer, relationships: relationships
   end
 
@@ -51,7 +55,11 @@ class Api::V1::AccountsController < Api::BaseController
     @account = Account.find(params[:id])
   end
 
-  def relationships(options = {})
+  def relationships(**options)
     AccountRelationshipsPresenter.new([@account.id], current_user.account_id, options)
+  end
+
+  def check_account_suspension
+    gone if @account.suspended?
   end
 end

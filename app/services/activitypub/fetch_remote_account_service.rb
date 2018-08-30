@@ -3,13 +3,15 @@
 class ActivityPub::FetchRemoteAccountService < BaseService
   include JsonLdHelper
 
+  SUPPORTED_TYPES = %w(Application Group Organization Person Service).freeze
+
   # Should be called when uri has already been checked for locality
   # Does a WebFinger roundtrip on each call
   def call(uri, id: true, prefetched_body: nil)
     @json = if prefetched_body.nil?
               fetch_resource(uri, id)
             else
-              body_to_json(prefetched_body)
+              body_to_json(prefetched_body, compare_id: id ? uri : nil)
             end
 
     return unless supported_context? && expected_type?
@@ -54,6 +56,6 @@ class ActivityPub::FetchRemoteAccountService < BaseService
   end
 
   def expected_type?
-    @json['type'] == 'Person'
+    equals_or_includes_any?(@json['type'], SUPPORTED_TYPES)
   end
 end

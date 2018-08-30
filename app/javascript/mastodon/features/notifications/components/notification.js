@@ -91,6 +91,7 @@ export default class Notification extends ImmutablePureComponent {
         hidden={this.props.hidden}
         onMoveDown={this.handleMoveDown}
         onMoveUp={this.handleMoveUp}
+        contextType='notifications'
       />
     );
   }
@@ -133,7 +134,7 @@ export default class Notification extends ImmutablePureComponent {
     const { notification } = this.props;
     const account          = notification.get('account');
     const displayNameHtml  = { __html: account.get('display_name_html') };
-    const link             = <Permalink className='notification__display-name' href={account.get('url')} title={account.get('acct')} to={`/accounts/${account.get('id')}`} dangerouslySetInnerHTML={displayNameHtml} />;
+    const link             = <bdi><Permalink className='notification__display-name' href={account.get('url')} title={account.get('acct')} to={`/accounts/${account.get('id')}`} dangerouslySetInnerHTML={displayNameHtml} /></bdi>;
 
     switch(notification.get('type')) {
     case 'follow':

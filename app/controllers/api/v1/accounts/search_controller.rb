@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::Accounts::SearchController < Api::BaseController
-  before_action -> { doorkeeper_authorize! :read }
+  before_action -> { doorkeeper_authorize! :read, :'read:accounts' }
   before_action :require_user!
 
   respond_to :json
@@ -17,12 +17,9 @@ class Api::V1::Accounts::SearchController < Api::BaseController
     AccountSearchService.new.call(
       params[:q],
       limit_param(DEFAULT_ACCOUNTS_LIMIT),
-      resolving_search?,
-      current_account
+      current_account,
+      resolve: truthy_param?(:resolve),
+      following: truthy_param?(:following)
     )
-  end
-
-  def resolving_search?
-    params[:resolve] == 'true'
   end
 end

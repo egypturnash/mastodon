@@ -9,7 +9,13 @@ const { unicodeToFilename } = require('./unicode_to_filename');
 const { unicodeToUnifiedName } = require('./unicode_to_unified_name');
 const emojiMap         = require('./emoji_map.json');
 const { emojiIndex } = require('emoji-mart');
-const { default: emojiMartData } = require('emoji-mart/dist/data');
+const { uncompress: emojiMartUncompress } = require('emoji-mart/dist/utils/data');
+let data = require('emoji-mart/data/all.json');
+
+if(data.compressed) {
+  data = emojiMartUncompress(data);
+}
+const emojiMartData = data;
 
 const excluded       = ['®', '©', '™'];
 const skins          = ['🏻', '🏼', '🏽', '🏾', '🏿'];
@@ -64,14 +70,14 @@ Object.keys(emojiMap).forEach(key => {
 
 Object.keys(emojiIndex.emojis).forEach(key => {
   const { native } = emojiIndex.emojis[key];
-  const { short_names, search, unified } = emojiMartData.emojis[key];
+  let { short_names, search, unified } = emojiMartData.emojis[key];
   if (short_names[0] !== key) {
     throw new Error('The compresser expects the first short_code to be the ' +
       'key. It may need to be rewritten if the emoji change such that this ' +
       'is no longer the case.');
   }
 
-  short_names.splice(0, 1); // first short name can be inferred from the key
+  short_names = short_names.slice(1); // first short name can be inferred from the key
 
   const searchData = [native, short_names, search];
   if (unicodeToUnifiedName(native) !== unified) {
@@ -88,6 +94,6 @@ module.exports = JSON.parse(JSON.stringify([
   shortCodesToEmojiData,
   emojiMartData.skins,
   emojiMartData.categories,
-  emojiMartData.short_names,
+  emojiMartData.aliases,
   emojisWithoutShortCodes,
 ]));
