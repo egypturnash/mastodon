@@ -114,16 +114,16 @@ export default class ComposeForm extends ImmutablePureComponent {
     if (this.props.focusDate !== prevProps.focusDate) {
       let selectionEnd, selectionStart;
 
-      if (this.props.preselectDate !== prevProps.preselectDate) {
-        selectionEnd   = this.props.text.length;
-        selectionStart = this.props.text.search(/\s/) + 1;
-      } else if (typeof this.props.caretPosition === 'number') {
-        selectionStart = this.props.caretPosition;
-        selectionEnd   = this.props.caretPosition;
-      } else {
+      // if (this.props.preselectDate !== prevProps.preselectDate) {
+      //   selectionEnd   = this.props.text.length;
+      //   selectionStart = this.props.text.search(/\s/) + 1;
+      // } else if (typeof this.props.caretPosition === 'number') {
+      //   selectionStart = this.props.caretPosition;
+      //   selectionEnd   = this.props.caretPosition;
+      // } else {
         selectionEnd   = this.props.text.length;
         selectionStart = selectionEnd;
-      }
+      // }
 
       this.autosuggestTextarea.textarea.setSelectionRange(selectionStart, selectionEnd);
       this.autosuggestTextarea.textarea.focus();
