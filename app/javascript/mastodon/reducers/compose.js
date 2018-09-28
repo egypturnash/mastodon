@@ -84,7 +84,7 @@ function statusToTextMentions(state, status) {
     set = set.add(`@${status.getIn(['account', 'acct'])} `);
   }
 
-  return set.union(status.get('mentions').filterNot(mention => mention.get('id') === me).map(mention => `@${mention.get('acct')} `)).join('');
+  return set.union(status.get('mentions').filterNot(mention => mention.get('id') === me).map(mention => `@${mention.get('acct')} `)).join('')+"\r\r";
 };
 
 function clearAll(state) {
