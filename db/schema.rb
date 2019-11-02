@@ -433,9 +433,9 @@ ActiveRecord::Schema.define(version: 2019_10_07_013357) do
   create_table "mutes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "hide_notifications", default: true, null: false
     t.bigint "account_id", null: false
     t.bigint "target_account_id", null: false
+    t.boolean "hide_notifications", default: true, null: false
     t.index ["account_id", "target_account_id"], name: "index_mutes_on_account_id_and_target_account_id", unique: true
     t.index ["target_account_id"], name: "index_mutes_on_target_account_id"
   end
@@ -691,30 +691,6 @@ ActiveRecord::Schema.define(version: 2019_10_07_013357) do
     t.bigint "tag_id", null: false
     t.index ["status_id"], name: "index_statuses_tags_on_status_id"
     t.index ["tag_id", "status_id"], name: "index_statuses_tags_on_tag_id_and_status_id", unique: true
-  end
-
-  create_table "stream_entries", force: :cascade do |t|
-    t.bigint "activity_id"
-    t.string "activity_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "hidden", default: false, null: false
-    t.bigint "account_id"
-    t.index ["account_id", "activity_type", "id"], name: "index_stream_entries_on_account_id_and_activity_type_and_id"
-    t.index ["activity_id", "activity_type"], name: "index_stream_entries_on_activity_id_and_activity_type"
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.string "callback_url", default: "", null: false
-    t.string "secret"
-    t.datetime "expires_at"
-    t.boolean "confirmed", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "last_successful_delivery_at"
-    t.string "domain"
-    t.bigint "account_id", null: false
-    t.index ["account_id", "callback_url"], name: "index_subscriptions_on_account_id_and_callback_url", unique: true
   end
 
   create_table "tags", force: :cascade do |t|
