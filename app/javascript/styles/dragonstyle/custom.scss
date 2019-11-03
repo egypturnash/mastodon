@@ -1,0 +1,20 @@
+// some little customizations
+
+// local mentions are 🐉 instead of @
+
+.status__content a.local-mention {
+   visibility: hidden;
+   margin-left: -0.9em;
+
+    span {
+     visibility: visible;
+
+      &:before {
+       visibility: visible;
+       background-size: contain;
+       width: 1.4em;
+       display: inline-block;
+       content: "🐉";
+     }
+   }
+ }
