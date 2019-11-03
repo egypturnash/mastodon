@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
 class StatusLengthValidator < ActiveModel::Validator
-  MAX_CHARS = 500
+  MAX_CHARS = 7777
+  MAX_UNCUT_CHARS = 777
 
   def validate(status)
     return unless status.local? && !status.reblog?
 
     @status = status
     status.errors.add(:text, I18n.t('statuses.over_character_limit', max: MAX_CHARS)) if too_long?
+    status.errors.add(:text, I18n.t('statuses.over_uncut_character_limit', max: MAX_UNCUT_CHARS/2)) if too_long_uncut?
+    status.errors.add(:text, I18n.t('statuses.over_precut_character_limit', max: MAX_UNCUT_CHARS/2)) if too_long_before_cut?
   end
 
   private
@@ -15,9 +18,25 @@ class StatusLengthValidator < ActiveModel::Validator
   def too_long?
     countable_length > MAX_CHARS
   end
+  
+  def too_long_uncut?
+    (countable_uncut_length > MAX_UNCUT_CHARS) && (countable_spoiler_length < 1)
+  end
+
+  def too_long_before_cut?
+    (countable_spoiler_length > MAX_UNCUT_CHARS/2)
+  end
 
   def countable_length
     total_text.mb_chars.grapheme_length
+  end
+  
+  def countable_uncut_length
+    countable_text.mb_chars.grapheme_length
+  end
+
+  def countable_spoiler_length
+    @status.spoiler_text.mb_chars.grapheme_length
   end
 
   def total_text
