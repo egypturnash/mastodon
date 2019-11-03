@@ -1,7 +1,7 @@
 ---
 en:
   about:
-    about_hashtag_html: These are public toots tagged with <strong>#%{hashtag}</strong>. You can interact with them if you have an account anywhere in the fediverse.
+    about_hashtag_html: These are public rars tagged with <strong>#%{hashtag}</strong>. You can interact with them if you have an account anywhere in the fediverse.
     about_mastodon_html: 'The social network of the future: No ads, no corporate surveillance, ethical design, and decentralization! Own your data with Mastodon!'
     about_this: About
     active_count_after: active
@@ -17,7 +17,7 @@ en:
     contact_unavailable: N/A
     discover_users: Discover users
     documentation: Documentation
-    federation_hint_html: With an account on %{instance} you'll be able to follow people on any Mastodon server and beyond.
+    federation_hint_html: With an account on %{instance} you'll be able to listen to people on any Mastodon server and beyond.
     get_apps: Try a mobile app
     hosted_on: Mastodon hosted on %{domain}
     instance_actor_flash: |
@@ -32,14 +32,14 @@ en:
       one: status
       other: statuses
     status_count_before: Who authored
-    tagline: Follow friends and discover new ones
+    tagline: Listen to friends and discover new ones
     terms: Terms of service
     unavailable_content: Unavailable content
     unavailable_content_description:
       domain: Server
       reason: Reason
       rejecting_media: 'Media files from these servers will not be processed or stored, and and no thumbnails will be displayed, requiring manual click-through to the original file:'
-      silenced: 'Posts from these servers will be hidden in public timelines and conversations, and no notifications will be generated from their users'' interactions, unless you are following them:'
+      silenced: 'Posts from these servers will be hidden in public timelines and conversations, and no notifications will be generated from their users'' interactions, unless you are listening to them:'
       suspended: 'No data from these servers will be processed, stored or exchanged, making any interaction or communication with users from these servers impossible:'
     unavailable_content_html: Mastodon generally allows you to view content from and interact with users from any other server in the fediverse. These are the exceptions that have been made on this particular server.
     user_count_after:
@@ -49,13 +49,13 @@ en:
     what_is_mastodon: What is Mastodon?
   accounts:
     choices_html: "%{name}'s choices:"
-    endorsements_hint: You can endorse people you follow from the web interface, and they will show up here.
+    endorsements_hint: You can endorse people you listen to from the web interface, and they will show up here.
     featured_tags_hint: You can feature specific hashtags that will be displayed here.
-    follow: Follow
+    follow: Listen
     followers:
-      one: Follower
-      other: Followers
-    following: Following
+      one: Listener
+      other: Listeners
+    following: Listening to
     joined: Joined %{date}
     last_active: last active
     link_verified_on: Ownership of this link was checked on %{date}
@@ -64,22 +64,22 @@ en:
     network_hidden: This information is not available
     never_active: Never
     nothing_here: There is nothing here!
-    people_followed_by: People whom %{name} follows
-    people_who_follow: People who follow %{name}
+    people_followed_by: People whom %{name} listens to
+    people_who_follow: People who listen to %{name}
     pin_errors:
-      following: You must be already following the person you want to endorse
+      following: You must be already listening to the person you want to endorse
     posts:
-      one: Toot
-      other: Toots
-    posts_tab_heading: Toots
-    posts_with_replies: Toots and replies
+      one: Rar
+      other: Rars
+    posts_tab_heading: Rars
+    posts_with_replies: Rars and replies
     reserved_username: The username is reserved
     roles:
       admin: Admin
       bot: Bot
       moderator: Mod
     unavailable: Profile unavailable
-    unfollow: Unfollow
+    unfollow: Stop listening to
   admin:
     account_actions:
       action: Perform action
@@ -118,9 +118,9 @@ en:
       enable: Enable
       enabled: Enabled
       feed_url: Feed URL
-      followers: Followers
-      followers_url: Followers URL
-      follows: Follows
+      followers: Listeners
+      followers_url: Listeners URL
+      follows: Listeners
       header: Header
       inbox_url: Inbox URL
       invited_by: Invited by
@@ -304,7 +304,7 @@ en:
         create: Create block
         hint: The domain block will not prevent creation of account entries in the database, but will retroactively and automatically apply specific moderation methods on those accounts.
         severity:
-          desc_html: "<strong>Silence</strong> will make the account's posts invisible to anyone who isn't following them. <strong>Suspend</strong> will remove all of the account's content, media, and profile data. Use <strong>None</strong> if you just want to reject media files."
+          desc_html: "<strong>Silence</strong> will make the account's posts invisible to anyone who isn't listening to them. <strong>Suspend</strong> will remove all of the account's content, media, and profile data. Use <strong>None</strong> if you just want to reject media files"
           noop: None
           silence: Silence
           suspend: Suspend
@@ -633,13 +633,13 @@ en:
     already_following: You are already following this account
     error: Unfortunately, there was an error looking up the remote account
     follow: Follow
-    follow_request: 'You have sent a follow request to:'
-    following: 'Success! You are now following:'
+    follow_request: 'You have sent a request to listen to:'
+    following: 'Success! You are now listening to:'
     post_follow:
       close: Or, you can just close this window.
       return: Show the user's profile
       web: Go to web
-    title: Follow %{acct}
+    title: Listen to %{acct}
   challenge:
     confirm: Continue
     hint_html: "<strong>Tip:</strong> We won't ask you for your password again for the next hour."
@@ -711,7 +711,7 @@ en:
     blocks: You block
     csv: CSV
     domain_blocks: Domain blocks
-    follows: You follow
+    follows: You listen to
     lists: Lists
     mutes: You mute
     storage: Media storage
@@ -777,12 +777,12 @@ en:
       merge_long: Keep existing records and add new ones
       overwrite: Overwrite
       overwrite_long: Replace current records with the new ones
-    preface: You can import data that you have exported from another server, such as a list of the people you are following or blocking.
+    preface: You can import data that you have exported from another server, such as a list of the people you are listening to or blocking.
     success: Your data was successfully uploaded and will now be processed in due time
     types:
       blocking: Blocking list
       domain_blocking: Domain blocking list
-      following: Following list
+      following: Listening list
       muting: Muting list
     upload: Upload
   in_memoriam_html: In Memoriam.
@@ -841,7 +841,7 @@ en:
       before: 'Before proceeding, please read these notes carefully:'
       cooldown: After moving there is a cooldown period during which you will not be able to move again
       disabled_account: Your current account will not be fully usable afterwards. However, you will have access to data export as well as re-activation.
-      followers: This action will move all followers from the current account to the new account
+      followers: This action will move all listeners from the current account to the new account
       only_redirect_html: Alternatively, you can <a href="%{path}">only put up a redirect on your profile</a>.
       other_data: No other data will be moved automatically
       redirect: Your current account's profile will be updated with a redirect notice and be excluded from searches
@@ -853,34 +853,34 @@ en:
       body: Here is a brief summary of the messages you missed since your last visit on %{since}
       mention: "%{name} mentioned you in:"
       new_followers_summary:
-        one: Also, you have acquired one new follower while being away! Yay!
-        other: Also, you have acquired %{count} new followers while being away! Amazing!
+        one: Also, one more person started listening to you while you were gone! Delightful.
+        other: Also, %{count} people started listening to you while you were gone. Huzzah!
       subject:
         one: "1 new notification since your last visit \U0001F418"
         other: "%{count} new notifications since your last visit \U0001F418"
       title: In your absence...
     favourite:
-      body: 'Your status was favourited by %{name}:'
-      subject: "%{name} favourited your status"
-      title: New favourite
+      body: 'Your growling was treasured by %{name}:'
+      subject: "%{name} treasured your growlings"
+      title: New treasure
     follow:
-      body: "%{name} is now following you!"
-      subject: "%{name} is now following you"
-      title: New follower
+      body: "%{name} is now listening to you!"
+      subject: "%{name} is now listening to you"
+      title: New listener
     follow_request:
       action: Manage follow requests
-      body: "%{name} has requested to follow you"
-      subject: 'Pending follower: %{name}'
-      title: New follow request
+      body: "%{name} has requested to listen to you"
+      subject: 'Pending listener: %{name}'
+      title: New listening request
     mention:
       action: Reply
       body: 'You were mentioned by %{name} in:'
       subject: You were mentioned by %{name}
       title: New mention
     reblog:
-      body: 'Your status was boosted by %{name}:'
-      subject: "%{name} boosted your status"
-      title: New boost
+      body: 'Your rar was echoed by %{name}:'
+      subject: "%{name} echoed your rar"
+      title: New echo
   number:
     human:
       decimal_units:
@@ -921,30 +921,30 @@ en:
     mutual: Mutual
     primary: Primary
     relationship: Relationship
-    remove_selected_domains: Remove all followers from the selected domains
-    remove_selected_followers: Remove selected followers
-    remove_selected_follows: Unfollow selected users
+    remove_selected_domains: Remove all listeners from the selected domains
+    remove_selected_followers: Remove selected listeners
+    remove_selected_follows: Stop listening to selected users
     status: Account status
   remote_follow:
     acct: Enter your username@domain you want to act from
     missing_resource: Could not find the required redirect URL for your account
     no_account_html: Don't have an account? You can <a href='%{sign_up_path}' target='_blank'>sign up here</a>
-    proceed: Proceed to follow
-    prompt: 'You are going to follow:'
+    proceed: Proceed to listen
+    prompt: 'You are going to listen to:'
     reason_html: "<strong>Why is this step necessary?</strong> <code>%{instance}</code> might not be the server where you are registered, so we need to redirect you to your home server first."
   remote_interaction:
     favourite:
-      proceed: Proceed to favourite
-      prompt: 'You want to favourite this toot:'
+      proceed: Proceed to treasure
+      prompt: 'You want to treasure this rar:'
     reblog:
-      proceed: Proceed to boost
-      prompt: 'You want to boost this toot:'
+      proceed: Proceed to echo
+      prompt: 'You want to echo this rar:'
     reply:
       proceed: Proceed to reply
-      prompt: 'You want to reply to this toot:'
+      prompt: 'You want to reply to this rar:'
   scheduled_statuses:
-    over_daily_limit: You have exceeded the limit of %{limit} scheduled toots for that day
-    over_total_limit: You have exceeded the limit of %{limit} scheduled toots
+    over_daily_limit: You have exceeded the limit of %{limit} scheduled rar for that day
+    over_total_limit: You have exceeded the limit of %{limit} scheduled rar
     too_soon: The scheduled date must be in the future
   sessions:
     activity: Last activity
@@ -1026,12 +1026,14 @@ en:
       other: 'contained the disallowed hashtags: %{tags}'
     language_detection: Automatically detect language
     open_in_web: Open in web
-    over_character_limit: character limit of %{max} exceeded
+    over_character_limit: Sorry! You can't go on for longer than %{max} characters. Maybe you should set up a blog.
+    over_uncut_character_limit: Please apply a CW to anything longer than %{max} characters.
+    over_precut_character_limit: Nice try. Please limit your CWs to %{max} characters.
     pin_errors:
-      limit: You have already pinned the maximum number of toots
-      ownership: Someone else's toot cannot be pinned
-      private: Non-public toot cannot be pinned
-      reblog: A boost cannot be pinned
+      limit: You have already pinned the maximum number of rars
+      ownership: Someone else's rar cannot be pinned
+      private: Non-public rar cannot be pinned
+      reblog: An echo cannot be pinned
     poll:
       total_people:
         one: "%{count} person"
@@ -1044,15 +1046,15 @@ en:
     sign_in_to_participate: Sign in to participate in the conversation
     title: '%{name}: "%{quote}"'
     visibilities:
-      private: Followers-only
-      private_long: Only show to followers
+      private: Listeners-only
+      private_long: Only show to listeners
       public: Public
       public_long: Everyone can see
       unlisted: Unlisted
       unlisted_long: Everyone can see, but not listed on public timelines
   stream_entries:
-    pinned: Pinned toot
-    reblogged: boosted
+    pinned: Pinned rar
+    reblogged: echoed
     sensitive_content: Sensitive content
   tags:
     does_not_match_previous_name: does not match the previous name
@@ -1140,9 +1142,11 @@ en:
       <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
+    default: "Soft Rumblings in a Quiet Cavern"
+    natural-order: "The Sounds of Waves Reversing"
+    mastodon: "Mastodon Default"
+    mastodon-light: Mastodon (light)
     contrast: Mastodon (High contrast)
-    default: Mastodon (Dark)
-    mastodon-light: Mastodon (Light)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
@@ -1171,8 +1175,8 @@ en:
     warning:
       explanation:
         disable: While your account is frozen, your account data remains intact, but you cannot perform any actions until it is unlocked.
-        silence: While your account is limited, only people who are already following you will see your toots on this server, and you may be excluded from various public listings. However, others may still manually follow you.
-        suspend: Your account has been suspended, and all of your toots and your uploaded media files have been irreversibly removed from this server, and servers where you had followers.
+        silence: While your account is limited, only people who are already listening to you will see your growlings on this server, and you may be excluded from various public listings. However, others may still manually listen to you.
+        suspend: Your account has been suspended, and all of your ras and your uploaded media files have been irreversibly removed from this server, and servers where you had listeners.
       get_in_touch: You can reply to this e-mail to get in touch with the staff of %{instance}.
       review_server_policies: Review server policies
       statuses: 'Specifically, for:'
@@ -1188,23 +1192,23 @@ en:
         suspend: Account suspended
     welcome:
       edit_profile_action: Setup profile
-      edit_profile_step: You can customize your profile by uploading an avatar, header, changing your display name and more. If you’d like to review new followers before they’re allowed to follow you, you can lock your account.
+      edit_profile_step: You can customize your profile by uploading an avatar, header, changing your display name and more. If you’d like to review new listeners before they’re allowed to listen to you, you can lock your account.
       explanation: Here are some tips to get you started
       final_action: Start posting
-      final_step: 'Start posting! Even without followers your public messages may be seen by others, for example on the local timeline and in hashtags. You may want to introduce yourself on the #introductions hashtag.'
+      final_step: 'Start posting! Even without listeners your public messages may be seen by others, for example on the local timeline and in hashtags. You may want to introduce yourself on the #introductions hashtag.'
       full_handle: Your full handle
-      full_handle_hint: This is what you would tell your friends so they can message or follow you from another server.
+      full_handle_hint: This is what you would tell your friends so they can message or listen to you from another server.
       review_preferences_action: Change preferences
       review_preferences_step: Make sure to set your preferences, such as which emails you'd like to receive, or what privacy level you’d like your posts to default to. If you don’t have motion sickness, you could choose to enable GIF autoplay.
       subject: Welcome to Mastodon
       tip_federated_timeline: The federated timeline is a firehose view of the Mastodon network. But it only includes people your neighbours are subscribed to, so it's not complete.
-      tip_following: You follow your server's admin(s) by default. To find more interesting people, check the local and federated timelines.
+      tip_following: You listen to your server's admin(s) by default. To find more interesting people, check the local and federated timelines.
       tip_local_timeline: The local timeline is a firehose view of people on %{instance}. These are your immediate neighbours!
       tip_mobile_webapp: If your mobile browser offers you to add Mastodon to your homescreen, you can receive push notifications. It acts like a native app in many ways!
       tips: Tips
       title: Welcome aboard, %{name}!
   users:
-    follow_limit_reached: You cannot follow more than %{limit} people
+    follow_limit_reached: You cannot listen to more than %{limit} people
     invalid_email: The e-mail address is invalid
     invalid_otp_token: Invalid two-factor code
     otp_lost_help_html: If you lost access to both, you may get in touch with %{email}
