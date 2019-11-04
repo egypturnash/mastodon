@@ -1,29 +1,5 @@
 @import 'application';
 
-//@import 'mastodon/mixins';
-//@import 'dragonstyle/variables';
-//@import 'fonts/roboto';
-//@import 'fonts/roboto-mono';
-//@import 'fonts/montserrat';
-//
-//@import 'mastodon/reset';
-//@import 'mastodon/basics';
-//@import 'mastodon/containers';
-//@import 'mastodon/lists';
-//@import 'mastodon/footer';
-//@import 'mastodon/compact_header';
-//@import 'mastodon/landing_strip';
-//@import 'mastodon/forms';
-//@import 'mastodon/accounts';
-//@import 'mastodon/stream_entries';
-//@import 'mastodon/components';
-//@import 'dragonstyle/boost';
-//@import 'mastodon/emoji_picker';
-//@import 'dragonstyle/about';
-//@import 'mastodon/tables';
-//@import 'mastodon/admin';
-//@import 'mastodon/rtl';
-
 
 body {
 //	font-size:16px !important;
@@ -38,7 +14,7 @@ body {
 		max-width: 100vw;
 	}
 	.column, .drawer {
-		margin-left: 3em;
+		padding-left: 3em;
 	}
 }
 
@@ -180,6 +156,10 @@ a, .status__content a {
 	.compose-form__buttons-wrapper {
 		background: darken($dragonstyle-background, 5%);
 		color:$primary-text-color;
+	}
+	.poll__text input[type=text] {
+		background:$dragonstyle-magenta;
+		border-color:$dragonstyle-background;
 	}
 }
 
