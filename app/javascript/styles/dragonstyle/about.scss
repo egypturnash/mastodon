@@ -124,6 +124,11 @@
     border-color: rgba($ui-base-lighter-color, .6);
   }
 
+  .public-layout .container {
+	  max-width:none;
+	  border:2px solid green;
+  }
+  
   .container {
     width: 100%;
     box-sizing: border-box;

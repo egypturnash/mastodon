@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class AboutController < ApplicationController
-  layout 'public'
+  layout 'application'
+  # changed from 'public' layout so my custom about page
+  # doesn't look like ass
 
   before_action :require_open_federation!, only: [:show, :more]
   before_action :set_body_classes, only: :show
