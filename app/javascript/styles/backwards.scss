@@ -24,6 +24,6 @@
 }
 
 /* this is a terrible kludge but it will do for now until I have time to dive into mastodon's js and change it to add new toots when you get to the TOP of the */
-[aria-posinset="0"]:first-child, .account-timeline__header {
+[aria-posinset="1"]:first-child, .account-timeline__header {
 	margin-bottom:150vh;
 }
